@@ -324,4 +324,299 @@
       border-radius: 8px;
       color: var(--white);
       font-family: 'DM Sans', sans-serif;
-      font​​​​​​​​​​​​​​​​
+      font
+      -size: 0.83rem; color: var(--text-light); line-height: 1.6; }
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(192,132,252,0.1);
+      color: var(--text-light);
+      font-size: 0.83rem;
+    }
+    footer a { color: var(--purple-soft); text-decoration: none; }
+    .wa-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .wa-fab:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.7); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { gap: 1rem; font-size: 0.8rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .booking-box { padding: 1.8rem 1.2rem; }
+      .studios-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Studios · Lille</div>
+  <div class="nav-links">
+    <a href="#studios">Studios</a>
+    <a href="#reservation">Réserver</a>
+    <a href="#paiement">Paiement</a>
+    <a href="#infos">Infos</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">📍 8 Rue du Vieux Faubourg · Lille 59800</div>
+  <h1>Deux studios <em>d'exception</em><br/>au cœur de Lille</h1>
+  <p class="hero-sub">Des espaces chaleureux, lumineux et soigneusement aménagés pour un séjour inoubliable.</p>
+  <div class="hero-cta">
+    <a href="#studios" class="btn btn-primary">✨ Découvrir les studios</a>
+    <a href="#reservation" class="btn btn-outline">📲 Réserver</a>
+  </div>
+</div>
+
+<section id="studios">
+  <p class="section-label">Nos hébergements</p>
+  <h2 class="section-title">Choisissez votre studio</h2>
+  <p class="section-sub">Deux studios de 20 m² entièrement équipés, chacun avec son ambiance unique.</p>
+  <div class="divider"></div>
+  <div class="studios-grid">
+
+    <div class="studio-card">
+      <div class="gallery" id="gallery-artiste">
+        <img src="IMG_0428.jpeg" class="active" alt="Studio Artiste - chambre" />
+        <img src="IMG_0427.jpeg" alt="Studio Artiste - vue d'ensemble" />
+        <img src="IMG_0430.jpeg" alt="Studio Artiste - cuisine" />
+        <button class="gallery-btn prev" onclick="changeSlide('artiste', -1)">&#8249;</button>
+        <button class="gallery-btn next" onclick="changeSlide('artiste', 1)">&#8250;</button>
+        <div class="gallery-dots" id="dots-artiste">
+          <div class="gallery-dot active" onclick="goToSlide('artiste', 0)"></div>
+          <div class="gallery-dot" onclick="goToSlide('artiste', 1)"></div>
+          <div class="gallery-dot" onclick="goToSlide('artiste', 2)"></div>
+        </div>
+      </div>
+      <div class="studio-body">
+        <div class="studio-name">Studio Artiste</div>
+        <div class="studio-size">20 m² · 8 Rue du Vieux Faubourg, Lille</div>
+        <ul class="studio-features">
+          <li>Lit double confortable avec draps bleus</li>
+          <li>Canapé / espace salon</li>
+          <li>Kitchenette équipée (plaques, réfrigérateur, micro-ondes)</li>
+          <li>Cafetière & équipements cuisine</li>
+          <li>TV écran plat</li>
+          <li>Salle de bain privative</li>
+          <li>Wi-Fi haut débit inclus</li>
+          <li>Vue sur la rue, rideaux bleus</li>
+        </ul>
+        <a href="https://wa.me/33767654866?text=Bonjour%2C%20je%20souhaite%20réserver%20le%20*Studio%20Artiste*%20au%208%20Rue%20du%20Vieux%20Faubourg%20à%20Lille.%20Pouvez-vous%20me%20donner%20les%20disponibilités%20%3F"
+           target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">
+          📲 Réserver via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="studio-card">
+      <div class="gallery" id="gallery-friends">
+        <img src="IMG_0424.jpeg" class="active" alt="Studio Friends - chambre" />
+        <img src="IMG_0425.jpeg" alt="Studio Friends - cuisine" />
+        <img src="IMG_0426.jpeg" alt="Studio Friends - coin repas" />
+        <button class="gallery-btn prev" onclick="changeSlide('friends', -1)">&#8249;</button>
+        <button class="gallery-btn next" onclick="changeSlide('friends', 1)">&#8250;</button>
+        <div class="gallery-dots" id="dots-friends">
+          <div class="gallery-dot active" onclick="goToSlide('friends', 0)"></div>
+          <div class="gallery-dot" onclick="goToSlide('friends', 1)"></div>
+          <div class="gallery-dot" onclick="goToSlide('friends', 2)"></div>
+        </div>
+      </div>
+      <div class="studio-body">
+        <div class="studio-name">Studio Friends</div>
+        <div class="studio-size">20 m² · 8 Rue du Vieux Faubourg, Lille</div>
+        <ul class="studio-features">
+          <li>Lit double confortable avec draps bleus</li>
+          <li>Canapé / espace salon</li>
+          <li>Kitchenette équipée (plaques, réfrigérateur, micro-ondes)</li>
+          <li>Cafetière & équipements cuisine</li>
+          <li>TV écran plat</li>
+          <li>Salle de bain privative</li>
+          <li>Wi-Fi haut débit inclus</li>
+          <li>Coin repas avec vue sur la rue</li>
+        </ul>
+        <a href="https://wa.me/33767654866?text=Bonjour%2C%20je%20souhaite%20réserver%20le%20*Studio%20Friends*%20au%208%20Rue%20du%20Vieux%20Faubourg%20à%20Lille.%20Pouvez-vous%20me%20donner%20les%20disponibilités%20%3F"
+           target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;">
+          📲 Réserver via WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="reservation">
+  <p class="section-label">Contact & Réservation</p>
+  <h2 class="section-title">Faites votre demande</h2>
+  <p class="section-sub">Remplissez ce formulaire et vous serez redirigé(e) vers WhatsApp avec votre message pré-rempli.</p>
+  <div class="divider"></div>
+  <div class="booking-box">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Prénom & Nom</label>
+        <input type="text" id="name" placeholder="Jean Dupont" />
+      </div>
+      <div class="form-group">
+        <label>Votre téléphone</label>
+        <input type="tel" id="phone" placeholder="+33 6 00 00 00 00" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Studio souhaité</label>
+      <select id="studio">
+        <option value="">-- Choisir un studio --</option>
+        <option value="Studio Artiste">🎨 Studio Artiste</option>
+        <option value="Studio Friends">🤝 Studio Friends</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date d'arrivée</label>
+        <input type="date" id="checkin" />
+      </div>
+      <div class="form-group">
+        <label>Date de départ</label>
+        <input type="date" id="checkout" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Message (optionnel)</label>
+      <textarea id="message" placeholder="Nombre de personnes, questions particulières..."></textarea>
+    </div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;" onclick="sendWhatsApp()">
+      📲 Envoyer ma demande via WhatsApp
+    </button>
+    <p class="wa-note">Vous serez redirigé(e) vers WhatsApp avec votre demande pré-remplie.</p>
+  </div>
+</section>
+
+<section id="paiement" class="payment-section">
+  <p class="section-label">Paiement sécurisé</p>
+  <h2 class="section-title">Réglez en toute confiance</h2>
+  <p class="section-sub">Le paiement s'effectue via PayPal, plateforme sécurisée et reconnue mondialement.</p>
+  <div class="divider"></div>
+  <div class="paypal-box">
+    <div class="paypal-logo">PayPal</div>
+    <p class="paypal-desc">Après confirmation de votre réservation par WhatsApp, vous recevrez un lien de paiement sécurisé — ou cliquez directement ci-dessous.</p>
+    <a href="https://paypal.me/Latichat" target="_blank" class="btn btn-primary" style="font-size:1rem;padding:1rem 2.5rem;">
+      💳 Payer via PayPal
+    </a>
+    <p style="font-size:0.76rem;color:var(--text-light);">Paiements en euros · 100% sécurisé</p>
+  </div>
+</section>
+
+<section id="infos">
+  <p class="section-label">Informations pratiques</p>
+  <h2 class="section-title">Tout ce qu'il faut savoir</h2>
+  <div class="divider"></div>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-icon">📍</div>
+      <div class="info-title">Adresse</div>
+      <div class="info-text">8 Rue du Vieux Faubourg<br/>59800 Lille, France</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📐</div>
+      <div class="info-title">Surface</div>
+      <div class="info-text">20 m² par studio<br/>Tout équipé & meublé</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🚇</div>
+      <div class="info-title">Accès</div>
+      <div class="info-text">Proche métro Lille<br/>Commerces à pied</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🔑</div>
+      <div class="info-title">Check-in / out</div>
+      <div class="info-text">Arrivée dès 15h<br/>Départ avant 11h</div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📲</div>
+      <div class="info-title">Contact</div>
+      <div class="info-text">WhatsApp uniquement<br/><a href="https://wa.me/33767654866" style="color:var(--purple-soft);">+33 7 67 65 48 66</a></div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">💳</div>
+      <div class="info-title">Paiement</div>
+      <div class="info-text">PayPal sécurisé<br/>Paiement en euros</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--purple-soft);margin-bottom:0.6rem;">Studios · 8 Rue du Vieux Faubourg, Lille</p>
+  <p>© 2025 · Réservation via <a href="https://wa.me/33767654866">WhatsApp</a> · Paiement via <a href="https://paypal.me/Latichat">PayPal</a></p>
+</footer>
+
+<a href="https://wa.me/33767654866" target="_blank" class="wa-fab" title="Nous contacter sur WhatsApp">💬</a>
+
+<script>
+  const galleries = {};
+  function initGallery(name) {
+    const el = document.getElementById('gallery-' + name);
+    const imgs = el.querySelectorAll('img');
+    galleries[name] = { imgs, current: 0, total: imgs.length };
+  }
+  function updateGallery(name) {
+    const g = galleries[name];
+    g.imgs.forEach((img, i) => img.classList.toggle('active', i === g.current));
+    const dots = document.querySelectorAll('#dots-' + name + ' .gallery-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === g.current));
+  }
+  function changeSlide(name, dir) {
+    const g = galleries[name];
+    g.current = (g.current + dir + g.total) % g.total;
+    updateGallery(name);
+  }
+  function goToSlide(name, idx) {
+    galleries[name].current = idx;
+    updateGallery(name);
+  }
+  initGallery('artiste');
+  initGallery('friends');
+  setInterval(() => changeSlide('artiste', 1), 4000);
+  setInterval(() => changeSlide('friends', 1), 4500);
+
+  function sendWhatsApp() {
+    const name     = document.getElementById('name').value.trim();
+    const phone    = document.getElementById('phone').value.trim();
+    const studio   = document.getElementById('studio').value;
+    const checkin  = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const message  = document.getElementById('message').value.trim();
+    if (!name || !studio || !checkin || !checkout) {
+      alert('Merci de remplir au minimum : votre nom, le studio, et les dates.');
+      return;
+    }
+    const text = `Bonjour, je souhaite réserver le *${studio}* :\n\n` +
+      `👤 Nom : ${name}\n` +
+      `📞 Téléphone : ${phone || 'non renseigné'}\n` +
+      `📅 Arrivée : ${checkin}\n` +
+      `📅 Départ : ${checkout}\n` +
+      (message ? `💬 Message : ${message}` : '');
+    window.open('https://wa.me/33767654866?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
+</body>
+</html>
